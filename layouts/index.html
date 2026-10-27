@@ -1,0 +1,70 @@
+
+{{ define "main" }}
+<section class="hero">
+    <div class="hero-content">
+
+        <p class="hero-status">// INITIALIZING PROFILE...</p>
+
+        <h1>Hey, I'm Christian Torres.</h1>
+
+        <h2>Aspiring Penetration Tester</h2>
+
+        <p class="hero-description">
+            I'm building my skills in cybersecurity through hands-on
+            practice, technical projects, and continuous learning.
+        </p>
+
+        <p class="hero-description">
+            This is where I document the journey — what I learn,
+            what I build, and what I discover along the way.
+        </p>
+
+        <div class="hero-links">
+            <a href="/posts/">View My Work &rarr;</a>
+            <a href="/contact/">Contact Me &rarr;</a>
+        </div>
+    </div>
+
+    <div class="hero-terminal">
+        <p>christian@security:~$ whoami</p>
+        <p class="terminal-output">aspiring-penetration-tester</p>
+
+        <p>christian@security:~$ cat current_focus.txt</p>
+        <p class="terminal-output">
+            Linux<br>
+            Networking<br>
+            Python<br>
+            Security Fundamentals
+        </p>
+
+        <p>christian@security:~$ <span class="cursor">_</span></p>
+    </div>
+</section>
+
+<div class="home-section-divider" aria-hidden="true">
+    <span>↓ SCROLL TO EXPLORE</span>
+</div>
+
+{{ with .Site.GetPage "/about" }}
+<section class="homepage-about" id="about">
+    {{ .Content }}
+</section>
+{{ end }}
+
+<section class="recent-posts">
+    <h2>// Recent Write-ups</h2>
+
+    <ul>
+        {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+        {{ else }}
+            <li class="empty-state">
+                // No write-ups published yet.
+            </li>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}
+

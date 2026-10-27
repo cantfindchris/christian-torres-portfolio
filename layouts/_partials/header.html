@@ -1,0 +1,16 @@
+<header class="site-header">
+  <a class="site-logo" href="/" aria-label="Christian Torres - Home">
+    CT<span class="logo-dot">.</span>
+  </a>
+
+  <button
+    class="mobile-menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="primary-navigation">
+    <span class="menu-icon" aria-hidden="true">☰</span>
+  </button>
+
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+</header>

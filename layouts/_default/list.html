@@ -1,0 +1,17 @@
+{{ define "main" }}
+    <article>
+        <h2 style="color: #3fb950;">// Directory: Logs & Technical Lab Write-ups</h2>
+        <p style="color: #8b949e; font-size: 0.85rem;">[ System Status: Active Archive ]</p>
+        <hr style="border: 0; border-top: 1px dashed #30363d; margin: 20px 0;">
+        
+        <ul style="list-style-type: ' > '; padding-left: 20px; line-height: 1.8;">
+            {{ range (where .Site.RegularPages "Section" "posts") }}
+                <li>
+                    <a href="{{ .Permalink }}" style="color: #58a6ff; text-decoration: none; font-weight: bold;">{{ .Title }}</a> 
+                </li>
+            {{ else }}
+                <li style="color: #8b949e;">// System Clear: No security logs published to this directory yet.</li>
+            {{ end }}
+        </ul>
+    </article>
+{{ end }}

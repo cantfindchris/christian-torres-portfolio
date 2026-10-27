@@ -1,0 +1,3 @@
+{{ $css := "css/style.css" }}
+{{ $version := now.Unix }}
+<link rel="stylesheet" href="{{ printf "%s?v=%d" ($css | relURL) $version | safeURL }}">

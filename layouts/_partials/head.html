@@ -1,0 +1,6 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<meta name="description" content="{{ if .Description }}{{ .Description | plainify | htmlEscape }}{{ else if .IsHome }}Christian Torres is an Information Technology student building practical skills in cybersecurity, networking, Linux, programming, and penetration testing.{{ else }}{{ .Summary | plainify | htmlEscape }}{{ end }}">
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
