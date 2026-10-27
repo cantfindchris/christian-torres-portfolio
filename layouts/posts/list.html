@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<section class="blog-page">
+
+    <header class="blog-heading">
+        <p class="blog-label">// LEARNING JOURNAL</p>
+        <h1>Blog &amp; Writeups</h1>
+        <p class="blog-intro">
+            Documenting my progress through networking, Linux,
+            programming, and cybersecurity labs.
+        </p>
+    </header>
+
+    <div class="blog-posts">
+
+        {{ range .RegularPages.ByDate.Reverse }}
+
+        <article class="blog-card">
+
+            <div class="blog-card-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "Jan 2, 2006" }}
+                </time>
+
+                {{ with .Params.categories }}
+                    <span class="blog-category">{{ index . 0 }}</span>
+                {{ end }}
+            </div>
+
+            <h2>
+                <a class="blog-card-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            {{ with .Description }}
+                <p class="blog-card-description">{{ . }}</p>
+            {{ else }}
+                <p class="blog-card-description">{{ .Summary | plainify | truncate 180 }}</p>
+            {{ end }}
+
+            {{ with .Params.tags }}
+                <div class="blog-tags">
+                    {{ range . }}
+                        <span class="blog-tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+            {{ end }}
+
+            <a class="blog-read-more" href="{{ .RelPermalink }}">
+                Read writeup &rarr;
+            </a>
+
+        </article>
+
+        {{ else }}
+
+        <div class="blog-empty">
+            <p>// No writeups published yet.</p>
+            <p>New learning notes and cybersecurity labs are coming soon.</p>
+        </div>
+
+        {{ end }}
+
+    </div>
+
+</section>
+
+{{ end }}

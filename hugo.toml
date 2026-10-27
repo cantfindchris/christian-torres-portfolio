@@ -14,14 +14,19 @@ title = 'Security Portfolio'
 
 [[menus.main]]
   name = '// Projects'
-  pageRef = '/posts'
+  pageRef = '/projects'
   weight = 30
+
+[[menus.main]]
+  name = '// Blog'
+  pageRef = '/posts'
+  weight = 40
 
 
 [[menus.main]]
   name = '// Contact'
   pageRef = '/contact'
-  weight = 40
+  weight = 50
 
 [markup]
   [markup.highlight]

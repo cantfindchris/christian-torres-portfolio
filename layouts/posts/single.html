@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+<article class="blog-article">
+
+    <header class="blog-article-header">
+
+        <a class="blog-back" href="{{ "posts/" | relURL }}">
+            &larr; Back to Blog
+        </a>
+
+        <p class="blog-article-label">// TECHNICAL WRITEUP</p>
+
+        <h1>{{ .Title }}</h1>
+
+        <div class="blog-article-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+
+            {{ with .ReadingTime }}
+                <span>{{ . }} min read</span>
+            {{ end }}
+        </div>
+
+        {{ with .Description }}
+            <p class="blog-article-description">{{ . }}</p>
+        {{ end }}
+
+        {{ with .Params.tags }}
+            <div class="blog-tags">
+                {{ range . }}
+                    <span class="blog-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        {{ end }}
+
+    </header>
+
+    <div class="blog-article-content">
+        {{ .Content }}
+    </div>
+
+    <footer class="blog-article-footer">
+        <a class="blog-back" href="{{ "posts/" | relURL }}">
+            &larr; Back to Blog
+        </a>
+    </footer>
+
+</article>
+
+{{ end }}

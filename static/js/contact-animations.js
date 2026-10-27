@@ -4,37 +4,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!page || !card) return;
 
-    if (
-        !("IntersectionObserver" in window) ||
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) return;
+    const command = card.querySelector(".contact-command");
+    const entries = Array.from(card.querySelectorAll(".contact-entry"));
 
-    const entries = card.querySelectorAll(".contact-entry");
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
+    if (reducedMotion || !("IntersectionObserver" in window) || !command) {
+        return;
+    }
+
+    const fullCommand = command.textContent.trim();
+
+    // Prepare the animation before revealing the terminal.
     page.classList.add("contact-motion-ready");
+    card.classList.add("contact-typing-ready");
 
-    const cardObserver = new IntersectionObserver((observations) => {
-        observations.forEach((observation) => {
+    command.textContent = "";
+
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    async function playTerminalAnimation() {
+        card.classList.add("is-visible");
+
+        await sleep(450);
+
+        // Type the terminal command character by character.
+        for (const character of fullCommand) {
+            command.textContent += character;
+            await sleep(35);
+        }
+
+        await sleep(350);
+
+        // Reveal the contact entries in sequence.
+        for (const entry of entries) {
+            entry.classList.add("is-visible");
+            await sleep(220);
+        }
+
+        card.classList.remove("contact-typing-ready");
+    }
+
+    const observer = new IntersectionObserver((observations) => {
+        for (const observation of observations) {
             if (observation.isIntersecting) {
-                card.classList.add("is-visible");
-                cardObserver.unobserve(card);
+                observer.unobserve(card);
+                playTerminalAnimation();
             }
-        });
+        }
     }, { threshold: 0.1 });
 
-    cardObserver.observe(card);
-
-    const entryObserver = new IntersectionObserver((observations) => {
-        observations.forEach((observation) => {
-            if (observation.isIntersecting) {
-                observation.target.classList.add("is-visible");
-                entryObserver.unobserve(observation.target);
-            }
-        });
-    }, {
-        threshold: 0.2,
-        rootMargin: "0px 0px -40px 0px"
-    });
-
-    entries.forEach((entry) => entryObserver.observe(entry));
+    observer.observe(card);
 });

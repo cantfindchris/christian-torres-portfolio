@@ -20,8 +20,8 @@
         </p>
 
         <div class="hero-links">
-            <a href="/posts/">View My Work &rarr;</a>
-            <a href="/contact/">Contact Me &rarr;</a>
+            <a href="{{ "projects/" | relURL }}">View My Work &rarr;</a>
+            <a href="{{ "contact/" | relURL }}">Contact Me &rarr;</a>
         </div>
     </div>
 
@@ -37,7 +37,7 @@
             Security Fundamentals
         </p>
 
-        <p>christian@security:~$ <span class="cursor">_</span></p>
+        <p>christian@security:~$ <span class="cursor" aria-hidden="true">▋</span></p>
     </div>
 </section>
 
@@ -52,12 +52,13 @@
 {{ end }}
 
 <section class="recent-posts">
-    <h2>// Recent Write-ups</h2>
+    <h2>// RECENT WRITE-UPS</h2>
 
     <ul>
-        {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+        {{ range first 5 ((where .Site.RegularPages "Section" "posts").ByDate.Reverse) }}
             <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <time class="recent-post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                <a class="recent-post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
             </li>
         {{ else }}
             <li class="empty-state">

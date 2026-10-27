@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="projects-page">
+  <div class="projects-heading">
+    <p class="projects-label">// MY WORK</p>
+    <h1>Projects</h1>
+    <p>Exploring Information Technology, programming, and cybersecurity through hands-on projects.</p>
+  </div>
+
+  <section class="featured-projects">
+    <h2>// FEATURED PROJECTS</h2>
+    <div class="featured-projects-grid">
+      <p>Featured projects coming soon.</p>
+    </div>
+  </section>
+
+  <section class="github-projects">
+    <h2>// GITHUB REPOSITORIES</h2>
+    <div id="github-repositories">
+      <p>GitHub repositories will appear here.</p>
+    </div>
+  </section>
+</section>
+<script src="{{ "js/github-projects.js" | relURL }}" defer></script>
+<script src="{{ "js/projects-animations.js" | relURL }}" defer></script>
+{{ end }}

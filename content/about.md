@@ -9,8 +9,8 @@ draft: false
 <section class="about-intro">
 <p class="about-label">// ABOUT ME</p>
 <h1>Building My Path Into Cybersecurity</h1>
-<p>I'm an Information Technology student at Montclair State University with a growing interest in offensive security and penetration testing. I'm developing my technical foundation through coursework, hands-on labs, programming, and personal projects.</p>
-<p>My goal is to understand how computer systems and networks operate, identify potential vulnerabilities, and develop the practical skills needed to assess and secure them.</p>
+<p>I'm an Information Technology student at Montclair State University interested in offensive security and penetration testing. I'm currently building my skills through coursework, hands-on labs, programming, and personal projects.</p>
+<p>I want to better understand how computers and networks work, how security weaknesses are discovered, and how those weaknesses can be addressed. As I continue learning, I'm focused on gaining practical experience and improving my technical skills.</p>
 </section>
 
 <section class="about-section">
