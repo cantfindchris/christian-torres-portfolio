@@ -1,0 +1,28 @@
+{{ with hugo.Data.about.personal_interests }}
+<section class="about-section">
+    <h2>// BEYOND THE TERMINAL</h2>
+
+    <div class="about-skills-grid">
+        {{ range . }}
+        <div class="about-card">
+            <h3>{{ .title }}</h3>
+
+            {{ with .description }}
+            <p>{{ . }}</p>
+            {{ end }}
+
+            {{ with .image }}
+            <img src="{{ . | relURL }}" alt="Personal interest photo" loading="lazy" style="max-width:100%;height:auto;border-radius:10px;">
+            {{ end }}
+
+            {{ with .video }}
+            <video controls preload="metadata" playsinline style="width:100%;height:auto;border-radius:10px;">
+                <source src="{{ . | relURL }}" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

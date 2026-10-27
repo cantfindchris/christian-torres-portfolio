@@ -1,0 +1,13 @@
+{{ with hugo.Data.about.introduction }}
+<section class="about-intro">
+
+    <p class="about-label">{{ .label }}</p>
+
+    <h1>{{ .heading }}</h1>
+
+    {{ range .paragraphs }}
+    <p>{{ . }}</p>
+    {{ end }}
+
+</section>
+{{ end }}

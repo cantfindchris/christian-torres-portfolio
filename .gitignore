@@ -6,3 +6,7 @@ resources/
 *.backup-*
 *.bak
 *.before-*
+
+/backups/
+/content/projects/test-project.md
+/....

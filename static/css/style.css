@@ -1846,6 +1846,7 @@ body > nav a:hover {
 
 .blog-read-more:hover {
     color: #3fb950;
+    text-decoration: underline;
 }
 
 .blog-empty {
@@ -2278,4 +2279,42 @@ body > nav a:hover {
     .about-intro.is-visible > * {
         animation-play-state: running;
     }
+}
+
+/* ===== FULLY CLICKABLE FEATURED PROJECT CARDS ===== */
+
+.projects-page .featured-projects-grid .project-card {
+    position: relative;
+}
+
+.projects-page .featured-projects-grid .project-card a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.projects-page .featured-projects-grid .project-card:focus-within {
+    border-color: #58a6ff;
+}
+
+/* ===== FULLY CLICKABLE GITHUB REPOSITORY CARDS ===== */
+
+.projects-page #github-repositories .project-card {
+    position: relative;
+}
+
+.projects-page #github-repositories .project-card a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.projects-page #github-repositories .project-card:focus-within {
+    border-color: #58a6ff;
+}
+
+/* ===== BLOG CARD-WIDE LINK HOVER ===== */
+.blog-card:hover .blog-read-more {
+    color: #3fb950;
+    text-decoration: underline;
 }

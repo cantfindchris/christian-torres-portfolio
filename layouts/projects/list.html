@@ -9,7 +9,27 @@
   <section class="featured-projects">
     <h2>// FEATURED PROJECTS</h2>
     <div class="featured-projects-grid">
-      <p>Featured projects coming soon.</p>
+      {{ range .RegularPages.ByWeight }}
+        <article class="project-card">
+          <h3>{{ .Title }}</h3>
+
+          {{ with .Description }}
+            <p>{{ . }}</p>
+          {{ end }}
+
+          {{ with .Params.tags }}
+            <div class="project-tags">
+              {{ range . }}
+                <span class="project-tag">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+
+          <a href="{{ .RelPermalink }}">View Project →</a>
+        </article>
+      {{ else }}
+        <p>Featured projects coming soon.</p>
+      {{ end }}
     </div>
   </section>
 

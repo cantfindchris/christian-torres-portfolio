@@ -1,0 +1,53 @@
+education:
+  university: "Montclair State University"
+  degree: "Bachelor of Science in Information Technology"
+  graduation: "Expected December 2027"
+  gpa: "3.7"
+  achievements:
+    - "Dean's List — Multiple Semesters"
+
+skills:
+  - category: "Networking"
+    items: "TCP/IP · DNS · DHCP · LAN/WAN"
+
+  - category: "Operating Systems"
+    items: "Linux Fundamentals · Windows"
+
+  - category: "Programming"
+    items: "Python · Java · C · Basic Bash"
+
+  - category: "Tools & Platforms"
+    items: "Git · GitHub · Docker · Jenkins"
+
+current_focus:
+  - title: "Networking Fundamentals"
+    description: "Understanding protocols, packet flow, and network troubleshooting."
+
+  - title: "Linux & Command Line"
+    description: "Building confidence with commands, permissions, processes, and Bash."
+
+  - title: "Python Programming"
+    description: "Practicing scripting and automation through small projects."
+
+  - title: "Security Fundamentals"
+    description: "Learning enumeration, common vulnerabilities, and ethical hacking concepts."
+
+certifications: []
+
+experience:
+  - company: "Morris County Golf Club"
+    role: "Facility Maintenance Assistant"
+    period: "January 2020 – Present"
+    description: "Assist with facility maintenance, repairs, painting, and general upkeep."
+    highlights:
+      - "Perform maintenance and repair tasks across club facilities."
+      - "Assist with onboarding and training new team members."
+
+introduction:
+  label: "// ABOUT ME"
+  heading: "Building My Path Into Cybersecurity"
+  paragraphs:
+    - "I'm an Information Technology student at Montclair State University interested in offensive security and penetration testing. I'm currently building my skills through coursework, hands-on labs, programming, and personal projects."
+    - "I want to better understand how computers and networks work, how security weaknesses are discovered, and how those weaknesses can be addressed. As I continue learning, I'm focused on gaining practical experience and improving my technical skills."
+
+personal_interests: []

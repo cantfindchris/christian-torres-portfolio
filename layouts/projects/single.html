@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<article class="blog-article">
+
+    <header class="blog-article-header">
+        <p class="blog-label">// FEATURED PROJECT</p>
+
+        <h1>{{ .Title }}</h1>
+
+        {{ with .Description }}
+            <p class="blog-article-description">{{ . }}</p>
+        {{ end }}
+
+        {{ with .Params.tags }}
+            <div class="blog-tags">
+                {{ range . }}
+                    <span class="blog-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        {{ end }}
+    </header>
+
+    <div class="blog-article-content">
+        {{ .Content }}
+    </div>
+
+    <footer class="blog-article-footer">
+        <a class="blog-back" href="{{ "projects/" | relURL }}">
+            &larr; Back to Projects
+        </a>
+    </footer>
+
+</article>
+
+{{ end }}

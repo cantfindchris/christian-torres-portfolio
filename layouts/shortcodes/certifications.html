@@ -1,0 +1,35 @@
+{{ with hugo.Data.about.certifications }}
+<section class="about-section">
+    <h2>// CERTIFICATIONS</h2>
+
+    <div class="about-skills-grid">
+        {{ range . }}
+        <div class="about-card">
+
+            {{ with .badge }}
+            <img src="{{ . | relURL }}" alt="Certification badge" loading="lazy">
+            {{ end }}
+
+            <h3>{{ .name }}</h3>
+
+            {{ with .issuer }}
+            <p class="about-accent">{{ . }}</p>
+            {{ end }}
+
+            {{ with .issued }}
+            <p>Issued: {{ . }}</p>
+            {{ end }}
+
+            {{ with .verification }}
+            <p><a href="{{ . }}" target="_blank" rel="noopener noreferrer">Verify Credential →</a></p>
+            {{ end }}
+
+            {{ with .certificate }}
+            <p><a href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">View Certificate →</a></p>
+            {{ end }}
+
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

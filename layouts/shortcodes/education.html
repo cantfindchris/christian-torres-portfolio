@@ -1,0 +1,19 @@
+{{ with hugo.Data.about.education }}
+<section class="about-section">
+    <h2>// EDUCATION</h2>
+
+    <div class="about-card">
+        <h3>{{ .university }}</h3>
+        <p class="about-accent">{{ .degree }}</p>
+
+        <div class="about-tags">
+            <span>{{ .graduation }}</span>
+            <span>GPA: {{ .gpa }}</span>
+        </div>
+
+        {{ range .achievements }}
+        <p>{{ . }}</p>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

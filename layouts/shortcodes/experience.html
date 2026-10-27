@@ -1,0 +1,30 @@
+{{ with hugo.Data.about.experience }}
+<section class="about-section">
+    <h2>// EXPERIENCE</h2>
+
+    {{ range . }}
+    <div class="about-card">
+        <h3>{{ .role }}</h3>
+        <p class="about-accent">{{ .company }}</p>
+
+        {{ with .period }}
+        <div class="about-tags">
+            <span>{{ . }}</span>
+        </div>
+        {{ end }}
+
+        {{ with .description }}
+        <p>{{ . }}</p>
+        {{ end }}
+
+        {{ with .highlights }}
+        <ul>
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+    {{ end }}
+</section>
+{{ end }}

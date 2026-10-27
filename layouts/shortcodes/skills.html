@@ -1,0 +1,14 @@
+{{ with hugo.Data.about.skills }}
+<section class="about-section">
+    <h2>// TECHNICAL SKILLS</h2>
+
+    <div class="about-skills-grid">
+        {{ range . }}
+        <div class="about-card">
+            <h3>{{ .category }}</h3>
+            <p>{{ .items }}</p>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
