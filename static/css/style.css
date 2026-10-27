@@ -508,9 +508,7 @@ body > nav a:hover {
     letter-spacing: -1px;
 }
 
-.site-logo:hover {
-    color: #f0f6fc;
-}
+
 
 .site-logo .logo-dot,
 .site-logo .logo-prompt {
