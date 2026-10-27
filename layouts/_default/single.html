@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-  {{ $isProfilePage := or (eq .RelPermalink "/about/") (eq .RelPermalink "/contact/") }}
+  {{ $isProfilePage := or (eq .Path "/about") (eq .Path "/contact") }}
 
   {{ if not $isProfilePage }}
     <h1>{{ .Title }}</h1>
