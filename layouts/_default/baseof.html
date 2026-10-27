@@ -9,7 +9,7 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  {{ if or .IsHome (eq .RelPermalink "/about/") }}
+  {{ if or .IsHome (eq .Path "/about") }}
     <script src="{{ "js/about-animations.js" | relURL }}" defer></script>
   {{ end }}
   {{ if eq .Path "/contact" }}
