@@ -50,4 +50,6 @@ introduction:
     - "I'm an Information Technology student at Montclair State University interested in offensive security and penetration testing. I'm currently building my skills through coursework, hands-on labs, programming, and personal projects."
     - "I want to better understand how computers and networks work, how security weaknesses are discovered, and how those weaknesses can be addressed. As I continue learning, I'm focused on gaining practical experience and improving my technical skills."
 
-personal_interests: []
+personal_interests:
+  - title: "Skateboarding"
+    description: "One of my favorite hobbies outside of technology."
