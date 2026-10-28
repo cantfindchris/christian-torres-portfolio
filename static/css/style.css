@@ -2318,3 +2318,14 @@ body > nav a:hover {
     color: #3fb950;
     text-decoration: underline;
 }
+
+/* Keep Personal Interests on the full About page only */
+.homepage-about .about-personal-interests {
+    display: none;
+}
+
+
+/* Temporarily hide Beyond the Terminal everywhere */
+.about-personal-interests {
+    display: none;
+}
