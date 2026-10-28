@@ -15,6 +15,9 @@
   {{ if eq .Path "/contact" }}
     <script src="{{ "js/contact-animations.js" | relURL }}" defer></script>
   {{ end }}
-  <script src="{{ "js/mobile-menu.js" | relURL }}" defer></script>
+  {{ if .IsHome }}
+    <script src="{{ "js/roadmap-animations.js" | relURL }}" defer></script>
+    {{ end }}
+    <script src="{{ "js/mobile-menu.js" | relURL }}" defer></script>
 </body>
 </html>

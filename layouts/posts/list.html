@@ -16,6 +16,7 @@
         {{ range .RegularPages.ByDate.Reverse }}
 
         <article class="blog-card">
+{{ partial "terminal-header.html" (dict "title" "christian@portfolio: ~/writeups") }}
 
             <div class="blog-card-meta">
                 <time datetime="{{ .Date.Format "2006-01-02" }}">

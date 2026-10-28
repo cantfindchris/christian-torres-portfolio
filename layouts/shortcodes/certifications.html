@@ -5,6 +5,7 @@
     <div class="about-skills-grid">
         {{ range . }}
         <div class="about-card">
+{{ partial "terminal-header.html" (dict "title" "christian@portfolio: ~/certifications") }}
 
             {{ with .badge }}
             <img src="{{ . | relURL }}" alt="Certification badge" loading="lazy">

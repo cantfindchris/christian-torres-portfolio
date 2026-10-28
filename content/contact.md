@@ -19,6 +19,12 @@ technology, and continuous learning.
 </p>
 
 <div class="contact-unified">
+<header class="terminal-window-header" aria-label="Contact terminal window">
+    <span class="terminal-window-dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+    </span>
+    <span class="terminal-window-title">christian@portfolio: ~/contact</span>
+</header>
 <p class="contact-command">christian@portfolio:~/contact$ cat connect.txt</p>
 <div class="contact-entry">
 <a class="contact-entry-link" href="mailto:cjotorres0401@gmail.com">

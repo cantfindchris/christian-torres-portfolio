@@ -1,0 +1,23 @@
+title: "My Cybersecurity Journey"
+subtitle: "Learning, building, and progressing toward offensive security."
+
+milestones:
+  - title: "IT Foundations"
+    description: "Networking, Linux, Windows, Python, and core IT concepts."
+    status: "in-progress"
+
+  - title: "Entry-Level IT Experience"
+    description: "Gain practical experience through internships or IT support."
+    status: "planned"
+
+  - title: "Security Fundamentals"
+    description: "Study Active Directory, security concepts, and hands-on labs."
+    status: "planned"
+
+  - title: "Offensive Security"
+    description: "Develop enumeration, exploitation, and penetration-testing skills in authorized labs."
+    status: "planned"
+
+  - title: "Penetration Testing Career"
+    description: "Work toward a professional penetration-testing role."
+    status: "planned"

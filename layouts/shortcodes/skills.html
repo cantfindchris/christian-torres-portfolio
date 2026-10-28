@@ -5,6 +5,7 @@
     <div class="about-skills-grid">
         {{ range . }}
         <div class="about-card">
+{{ partial "terminal-header.html" (dict "title" "christian@portfolio: ~/skills") }}
             <h3>{{ .category }}</h3>
             <p>{{ .items }}</p>
         </div>

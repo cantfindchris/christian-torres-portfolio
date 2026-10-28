@@ -1,0 +1,35 @@
+{{ with hugo.Data.roadmap }}
+<section class="career-roadmap" id="career-roadmap" aria-labelledby="roadmap-heading">
+
+    <div class="career-roadmap-heading">
+        <h2 id="roadmap-heading">// {{ .title | upper }}</h2>
+        <p>{{ .subtitle }}</p>
+    </div>
+
+    <ol class="career-roadmap-timeline">
+        {{ range .milestones }}
+        <li class="career-roadmap-item roadmap-{{ .status }}">
+            <span class="roadmap-marker" aria-hidden="true">
+                {{ if eq .status "completed" }}
+                    <span class="roadmap-check">✓</span>
+                {{ end }}
+            </span>
+
+            <div class="roadmap-details">
+                <h3>{{ .title }}</h3>
+                <p>{{ .description }}</p>
+
+                {{ if eq .status "completed" }}
+                    <span class="roadmap-status">Completed</span>
+                {{ else if eq .status "in-progress" }}
+                    <span class="roadmap-status">Currently Learning</span>
+                {{ else }}
+                    <span class="roadmap-status">Planned</span>
+                {{ end }}
+            </div>
+        </li>
+        {{ end }}
+    </ol>
+
+</section>
+{{ end }}

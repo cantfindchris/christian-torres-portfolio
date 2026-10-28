@@ -1,8 +1,9 @@
 {{ with hugo.Data.about.current_focus }}
-<section class="about-section">
+<section class="about-section about-current-focus">
     <h2>// CURRENT FOCUS</h2>
 
     <div class="about-card about-focus">
+{{ partial "terminal-header.html" (dict "title" "christian@portfolio: ~/current-focus") }}
         {{ range . }}
         <div class="focus-item">
             <h3>{{ .title }}</h3>

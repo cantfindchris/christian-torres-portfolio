@@ -11,6 +11,7 @@
     <div class="featured-projects-grid">
       {{ range .RegularPages.ByWeight }}
         <article class="project-card">
+{{ partial "terminal-header.html" (dict "title" "christian@portfolio: ~/projects") }}
           <h3>{{ .Title }}</h3>
 
           {{ with .Description }}
