@@ -19,5 +19,8 @@
     <script src="{{ "js/roadmap-animations.js" | relURL }}" defer></script>
     {{ end }}
     <script src="{{ "js/mobile-menu.js" | relURL }}" defer></script>
+  {{ if or .IsHome (eq .Path "/about") }}
+    <script src="{{ "js/pc-photo-popup.js" | relURL }}" defer></script>
+  {{ end }}
 </body>
 </html>

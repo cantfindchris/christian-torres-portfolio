@@ -46,9 +46,10 @@ experience:
 introduction:
   label: "// ABOUT ME"
   heading: "Building My Path Into Cybersecurity"
+  pc_image: "images/about/my-first-pc.jpg"
   paragraphs:
-    - "I'm an Information Technology student at Montclair State University interested in offensive security and penetration testing. I'm currently building my skills through coursework, hands-on labs, programming, and personal projects."
-    - "I want to better understand how computers and networks work, how security weaknesses are discovered, and how those weaknesses can be addressed. As I continue learning, I'm focused on gaining practical experience and improving my technical skills."
+    - "I'm an Information Technology student at Montclair State University with an interest in offensive security and penetration testing. My interest in technology started four years ago when I built my first "
+    - "Since then, I've become more interested in understanding how computers and networks work, how security vulnerabilities are discovered, and how they can be addressed. I'm currently building my skills through coursework, hands-on labs, programming, and personal projects."
 
 personal_interests:
   - title: "Skateboarding"

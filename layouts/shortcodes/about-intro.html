@@ -1,13 +1,34 @@
-{{ with hugo.Data.about.introduction }}
+{{ $intro := hugo.Data.about.introduction }}
+{{ with $intro }}
 <section class="about-intro">
 
     <p class="about-label">{{ .label }}</p>
 
     <h1>{{ .heading }}</h1>
 
-    {{ range .paragraphs }}
-    <p>{{ . }}</p>
+    {{ range $index, $paragraph := .paragraphs }}
+    {{ if eq $index 0 }}
+    <p>{{ $paragraph }}{{ with $intro.pc_image }}<a href="{{ . | relURL }}" class="pc-photo-link">computer</a>{{ end }}, and that's what made me want to pursue a career in IT.</p>
+    {{ else }}
+    <p>{{ $paragraph }}</p>
+    {{ end }}
     {{ end }}
 
 </section>
+
+{{ with $intro.pc_image }}
+<dialog id="pc-photo-dialog" class="pc-photo-dialog" aria-label="My First PC Build">
+    <div class="pc-photo-window">
+        <header class="pc-photo-header">
+            <span class="pc-photo-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </span>
+            <span class="pc-photo-title">my-first-pc.jpg</span>
+            <button type="button" class="pc-photo-close" aria-label="Close photo">×</button>
+        </header>
+        <img src="{{ . | relURL }}" alt="My first custom-built computer">
+    </div>
+</dialog>
+{{ end }}
+
 {{ end }}
